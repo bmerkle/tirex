@@ -1,6 +1,6 @@
 [project]
 name = "tirex-ts"
-version = "1.2.0"
+version = "1.4.0"
 authors = [
   { name="Andreas Auer", email="andreas.auer@nx-ai.com" },
   { name="Martin Loretz", email="martin.loretz@nx-ai.com" },
@@ -13,12 +13,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-keywords = ["TiRex", "xLSTM", "Time Series", "Zero-shot", "Deep Learning"]
+keywords = ["TiRex", "xLSTM", "Timeseries", "Zero-shot", "Deep Learning", "Timeseries-Forecasting" ,"Timeseries-Classification", "Timeseries-Regression"]
 dependencies = [
     "torch",
-    "einops",
     "huggingface-hub",
     "numpy",
+    "scikit-learn"
 ]
 
 [project.urls]
@@ -34,7 +34,9 @@ notebooks = ["ipykernel", "matplotlib", "pandas", "python-dotenv"]
 plotting = ["matplotlib"]
 gluonts = ["gluonts", "pandas"]
 hfdataset = ["datasets"]
-test = ["fev>=0.6.0", "pytest"]
+test = ["fev>=0.6.0", "pytest", "aeon"]
+classification = ["lightgbm[scikit-learn]"]
+regression = ["lightgbm[scikit-learn]"]
 all = [
     "xlstm",
     "ninja",
@@ -46,6 +48,8 @@ all = [
     "datasets",
     "pytest",
     "fev>=0.6.0",
+    "scikit-learn",
+    "lightgbm[scikit-learn]"
 ]
 
 # build system

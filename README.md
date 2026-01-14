@@ -45,12 +45,12 @@ pip install tirex-ts
 
 Install with additional input/output adapter:
 ```sh
-pip install 'tirex-ts[gluonts,hfdataset]'
+pip install "tirex-ts[gluonts,hfdataset]"
 ```
 
 You can also install TiRex with all extras at once using:
 ```sh
-pip install 'tirex-ts[all]'
+pip install "tirex-ts[all]"
 ```
 
 TiRex is currently only tested on Linux and MacOS.
@@ -72,9 +72,18 @@ You can also run it in [Google Colab](https://colab.research.google.com/github/N
 
 We provide notebooks to run the benchmarks: [GiftEval](./examples/gifteval/gifteval.ipynb) and [Chronos-ZS](./examples/chronos_zs/chronos_zs.ipynb).
 
+## TiRex Classification Model
+[![Paper](https://img.shields.io/static/v1?label=Paper&message=2510.26777&color=B31B1B&logo=arXiv)](http://arxiv.org/abs/2510.26777)
+
+For detailed instructions on using TiRex classification model please visit our [documentation page](https://nx-ai.github.io/tirex/how-to/classification/) and [quick start Notebook](./examples/quick_start_tirex_classification.ipynb).
+
+## TiRex Regression Model
+
+For detailed instructions on using TiRex regression model please visit our [documentation page](https://nx-ai.github.io/tirex/how-to/regression/) or our [quick start Notebook](./examples/quick_start_tirex_regression.ipynb).
+
 ## TiRex Docker image
 
-For detailed instructions on building and running TiRex in a Docker container, see the [Docker README](./inference/README.md).
+For detailed instructions on building and running TiRex in a Docker container, see the [Docker README](./inference/README.md) or our [deployment documentation](https://nx-ai.github.io/tirex/deployment).
 
 ## Finetuning TiRex
 TiRex already provide state-of-the-art performance for zero-shot prediction. Hence, you can use it without training on your own data.
@@ -87,12 +96,12 @@ If you are interested in models fine-tuned on your data or with different pretra
 Tirex can use custom CUDA kernels for the sLSTM cells.
 These CUDA kernels are compiled when the model is loaded the first time.
 The CUDA kernels require GPU hardware that support CUDA compute capability 8.0 or later.
-We also highly suggest to use the provided [conda environment spec](./requirements_py26.yaml).
+We also highly suggest to use the provided [conda environment spec](./requirements_cu124.yaml).
 The CUDA kernels are automatically used when the xlstm package is installed.
 
 To install TiRex with the CUDA kernels run:
 ```sh
-pip install 'tirex-ts[cuda,gluonts,hfdataset]'
+pip install "tirex-ts[cuda,gluonts,hfdataset]"
 ```
 
 Explicitly set the custom CUDA backend:
@@ -135,6 +144,15 @@ If you use TiRex in your research, please cite our work:
   booktitle = {The Thirty-Ninth Annual Conference on Neural Information Processing Systems},
   year = {2025}
   url = {https://arxiv.org/abs/2505.23719},
+}
+```
+```bibtex
+@inproceedings{auer:25tirexclassification,
+    title = {Pre-trained Forecasting Models: Strong Zero-Shot Feature Extractors for Time Series Classification},
+    author = {Andreas Auer and Daniel Klotz and Sebastinan B{\"o}ck and Sepp Hochreiter},
+    booktitle = {NeurIPS 2025 Workshop on Recent Advances in Time Series Foundation Models (BERT2S)},
+    year = {2025},
+    url = {https://arxiv.org/abs/2510.26777},
 }
 ```
 

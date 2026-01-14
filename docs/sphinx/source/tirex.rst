@@ -9,8 +9,8 @@ Load Model
 .. autofunction:: load_model
    :noindex:
 
-Model interface
----------------
+Forecasting Model interface
+---------------------------
 
 .. autoclass:: ForecastModel
    :members: max_context_length, forecast, forecast_gluon, forecast_hfdata
@@ -18,5 +18,9 @@ Model interface
 Utilities
 ---------
 
+.. _module-tirex.util:
+
 .. automodule:: tirex.util
-   :members: select_quantile_subset
+   :members:
+      select_quantile_subset,
+      plot_forecast
